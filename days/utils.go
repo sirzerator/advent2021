@@ -7,13 +7,6 @@ import (
 	"strings"
 )
 
-func Run(day string, verbose bool) {
-	switch day {
-	case "1":
-		day1(verbose)
-	}
-}
-
 func ArrayToInteger(vs []string) []int {
 	vsm := make([]int, len(vs)-1)
 	for i, v := range vs {

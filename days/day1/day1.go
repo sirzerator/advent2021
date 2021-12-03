@@ -1,22 +1,25 @@
-package days
+package day1
 
 import (
 	"fmt"
+
+	d "github.com/sirzerator/advent2021/days"
 )
 
-func day1(verbose bool) {
-	PrintTitle("Running day 1")
-	PrintSubtitle("Example Part 1")
-	example := ReadLines("./days/day1/example")
-	executePart1(ArrayToInteger(example), verbose)
-	PrintSubtitle("Example Part 2")
-	executePart2(ArrayToInteger(example), verbose)
+func Run(verbose bool) {
+	d.PrintTitle("Running day 1")
+	example := d.ReadLines("./days/day1/example")
+	data := d.ReadLines("./days/day1/input")
 
-	data := ReadLines("./days/day1/input")
-	PrintSubtitle("Input Part 1")
-	executePart1(ArrayToInteger(data), verbose)
-	PrintSubtitle("Input Part 2")
-	executePart2(ArrayToInteger(data), verbose)
+	d.PrintSubtitle("Example Part 1")
+	executePart1(d.ArrayToInteger(example), verbose)
+	d.PrintSubtitle("Example Part 2")
+	executePart2(d.ArrayToInteger(example), verbose)
+
+	d.PrintSubtitle("Input Part 1")
+	executePart1(d.ArrayToInteger(data), verbose)
+	d.PrintSubtitle("Input Part 2")
+	executePart2(d.ArrayToInteger(data), verbose)
 }
 
 func executePart1(values []int, verbose bool) {

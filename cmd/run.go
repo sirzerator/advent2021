@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/sirzerator/advent2021/days"
+	"github.com/sirzerator/advent2021/days/day1"
 	"github.com/spf13/cobra"
 )
 
@@ -12,7 +12,10 @@ var runCmd = &cobra.Command{
 	Args:      cobra.ExactValidArgs(1),
 	ValidArgs: []string{"1"},
 	Run: func(cmd *cobra.Command, args []string) {
-		days.Run(args[0], Verbose)
+		switch args[0] {
+		case "1":
+			day1.Run(Verbose)
+		}
 	},
 }
 
