@@ -22,7 +22,13 @@ func ReadLines(path string) []string {
 	if err != nil {
 		panic(err)
 	}
-	return strings.Split(string(content), "\n")
+	lines := strings.Split(string(content), "\n")
+
+	if len(lines) > 0 {
+		return lines[:len(lines)-1]
+	}
+
+	return lines
 }
 
 func ToInteger(str string) int {
