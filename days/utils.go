@@ -8,11 +8,9 @@ import (
 )
 
 func ArrayToInteger(vs []string) []int {
-	vsm := make([]int, len(vs)-1)
+	vsm := make([]int, len(vs))
 	for i, v := range vs {
-		if v != "" {
-			vsm[i] = ToInteger(v)
-		}
+		vsm[i] = ToInteger(v)
 	}
 	return vsm
 }
