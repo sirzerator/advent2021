@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"github.com/sirzerator/advent2021/days/day1"
+	"github.com/sirzerator/advent2021/days/day10"
 	"github.com/sirzerator/advent2021/days/day2"
 	"github.com/sirzerator/advent2021/days/day3"
 	"github.com/sirzerator/advent2021/days/day4"
@@ -18,7 +19,7 @@ var runCmd = &cobra.Command{
 	Short:     "Run a specific days challenge",
 	Long:      ``,
 	Args:      cobra.ExactValidArgs(1),
-	ValidArgs: []string{"1", "2", "3", "4", "5", "6", "7", "8", "9"},
+	ValidArgs: []string{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"},
 	Run: func(cmd *cobra.Command, args []string) {
 		switch args[0] {
 		case "1":
@@ -39,6 +40,8 @@ var runCmd = &cobra.Command{
 			day8.Run(Verbose)
 		case "9":
 			day9.Run(Verbose)
+		case "10":
+			day10.Run(Verbose)
 		}
 	},
 }
