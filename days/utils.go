@@ -52,3 +52,21 @@ func PrintSubtitle(str string) {
 	fmt.Println(str)
 	fmt.Println("-------------")
 }
+
+func PrintMatrix(matrix [][]int) {
+	for i := range matrix {
+		for j := range matrix[i] {
+			fmt.Print(fmt.Sprintf("%d ", matrix[i][j]))
+		}
+		fmt.Println()
+	}
+	fmt.Println()
+}
+
+func MapMatrix(matrix [][]int, f func(int, int, int) int) {
+	for i := range matrix {
+		for j := range matrix[i] {
+			matrix[i][j] = f(matrix[i][j], j, i)
+		}
+	}
+}
